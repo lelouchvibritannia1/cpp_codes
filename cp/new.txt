@@ -1,0 +1,37 @@
+acbook Air M1 Late 2020: https://www.apple.com/shop/buy-mac/ma...
+
+Blue Yeti microphone: https://www.bluemic.com/en-us/product...
+
+One by Wacom tablet: https://www.wacom.com/en-gb/products/...
+
+Huge Dell monitor: https://www.dell.com/en-uk/shop/dell-...
+
+Sketchbook by Autodesk: https://www.autodesk.com/products/ske...
+
+CF Predictor: https://chrome.google.com/webstore/de...
+
+Codeforces Enhancer: https://chrome.google.com/webstore/de...
+
+Macvim: https://github.com/macvim-dev/macvim
+
+My vimrc file: https://pastebin.com/nEtaQa73
+
+Jellybeans (vim color scheme): https://github.com/nanotech/jellybean...
+
+Vim-Plug (vim plugin manager): https://github.com/junegunn/vim-plug
+
+Ultisnips (vim snippets plugin): https://github.com/SirVer/ultisnips
+
+My snippets file for c++: https://pastebin.com/A72rtbAh
+
+How to set up stdc++.h file on macos: https://codeforces.com/blog/entry/709...
+
+Precompile stdc++.h: https://codeforces.com/blog/entry/53909
+
+Why rand function is bad and mt19937 generator is great: https://codeforces.com/blog/entry/61587
+
+Why cout.tie(0) is completely useless: https://codeforces.com/blog/entry/907...
+
+Iterm2: https://iterm2.com/
+
+Oh My Zsh: https://ohmyz.sh/

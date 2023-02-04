@@ -1,0 +1,6 @@
+esbenp.prettier-vscode
+formulahendry.auto-close-tag
+hex-ci.stylelint-plus
+dbaeumer.vscode-eslint
+naumovs.color-highlight
+DigitalBrainstem.javascript-ejs-support

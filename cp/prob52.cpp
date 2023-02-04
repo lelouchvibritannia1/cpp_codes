@@ -1,0 +1,89 @@
+#include<bits/stdc++.h>
+#include<iostream>
+#pragma GCC optimize("Ofast")
+#pragma GCC target("sse,sse2,sse3,ssse3,sse4,popcnt,abm,mmx,avx,avx2,fma")
+#pragma GCC optimize("unroll-loops")
+
+using namespace std;
+
+typedef long long ll;
+typedef long double ld;
+typedef pair<int,int> p32;
+typedef pair<ll,ll> p64;
+typedef pair<double,double> pdd;
+typedef vector<ll> v64;
+typedef vector<int> v32;
+typedef vector<vector<int> > vv32;
+typedef vector<vector<ll> > vv64;
+typedef vector<vector<p64> > vvp64;
+typedef vector<p64> vp64;
+typedef vector<p32> vp32;
+typedef stack<ll> s64;
+typedef stack<int> s32;
+typedef stack<pair<int,int>> sp32;
+typedef unordered_map<int,int> ump32;
+ll MOD = 1e9 + 7;
+double eps = 1e-8;
+ll MAX=1e5;
+
+
+#define G(x) ll x; cin >> x
+#define GS(x) string x; cin >> x
+#define F(i,l,r) for(ll i=l;i<r;i++)
+#define FD(i,r,l) for(ll i=r;i>l;i--)
+#define CO(x) cout << x << '\n'
+#define CO_(x) cout << x << ' '
+#define GA(x,n) ll x[n]; F(i,0,n) cin >> x[i]
+#define CA(x,n) F(i,0,n) {CO_(x[i]);} cout << '\n'
+#define fast_cin() ios_base::sync_with_stdio(false); cin.tie(NULL); cout.tie(NULL)
+
+
+struct custom_hash{size_t operator()(size_t x)const{static const size_t FIXED_RANDOM = chrono::steady_clock::now().time_since_epoch().count(); x += 0x9e3779b97f4a7c15 + FIXED_RANDOM; x = (x ^ (x >> 30)) * 0xbf58476d1ce4e5b9; x = (x ^ (x >> 27)) * 0x94d049bb133111eb; return x ^ (x >> 31); } };
+
+vector<bool> prime(MAX,true);
+void sieve(){
+    prime[0]=prime[1]=false;
+    for(int i=2;i*i<MAX;i++){
+        if(prime[i]){
+            for(int j=i*i;j<MAX;j+=i){
+                prime[j]=false;
+            }
+        }
+    }
+}
+
+
+/*this here is code */
+
+
+void solve(){
+
+    int n,k;
+    cin>>n>>k;
+    unordered_map<ll,p64,custom_hash> mp;
+    for(int i=0;i<n;i++){
+        ll temp;
+        cin>>temp;
+        if(!mp.count(temp)){
+            mp[temp].first=i;
+            mp[temp].second=i;
+        }
+        else mp[temp].second=i;
+    }
+    for(int i=0;i<k;i++){
+        ll a,b;
+        cin>>a>>b;
+        if(!mp.count(a) or !mp.count(b) or mp[a].first > mp[b].second){
+            cout<<"NO"<<endl;
+        }
+        else{
+            cout<<"YES"<<endl;
+        }
+    }
+}
+
+
+int main(){
+    fast_cin();ll t;cin>>t;while(t--) solve();
+}
+/*which ends here*/
