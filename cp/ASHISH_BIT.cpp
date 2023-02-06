@@ -98,7 +98,7 @@ vector<int> solve(int n, vector<int>a, vector<vector<int>> queries){
         tree.build(0,a.size()-1,0,a,val-1);
         for(int i=0;i<queries.size();i++){
             int x=queries[i][0],y=queries[i][1];
-            tree.update()
+            // tree.update()
         }
 
 }
