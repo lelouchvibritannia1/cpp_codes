@@ -1,0 +1,106 @@
+int Solution::repeatedNumber(const vector<int> &A) {
+    // Do not write main() function.
+    // Do not read input, instead use the arguments to the function.
+    // Do not print the output, instead return values as specified
+    // Still have a doubt. Checkout www.interviewbit.com/pages/sample_codes/ for more details
+    int v1=0,v2=0;
+    int c1=INT_MIN,c2=INT_MIN;
+    int n=A.size();
+    for(int i=0;i<n;i++){
+        if(v1==0 && c2!=A[i]){
+            v1=1;
+            c1=A[i];
+        }
+        else if(v2==0 && c1!=A[i]){
+            v2=1;
+            c2=A[i];
+        }
+        else if(c1==A[i]) v1++;
+        else if(c2==A[i]) v2++;
+        else{
+            v1--;v2--;
+        }
+    }
+    int cnt1=0,cnt2=0;
+    for(int i=0;i<n;i++){
+        if(A[i]==c1) cnt1++;
+        if(A[i]==c2) cnt2++;
+    }
+    if(cnt1>n/3) return c1;
+    else if(cnt2>n/3) return c2;
+    else return -1;
+}
+//n/3 majority element
+
+//rotate matrix 90 degree clockwise
+
+void Solution::rotate(vector<vector<int> > &A) {
+    // Do not write main() function.
+    // Do not read input, instead use the arguments to the function.
+    // Do not print the output, instead return values as specified
+    // Still have a doubt. Checkout www.interviewbit.com/pages/sample_codes/ for more details
+    
+    for(int i=0;i<A.size();i++){
+        for(int j=i;j<A[0].size();j++){
+            swap(A[i][j],A[j][i]);
+        }
+    }
+    for(int i=0;i<A.size();i++){
+        for(int j=0;j<A[0].size()/2;j++){
+            swap(A[i][j],A[i][A[0].size()-1-j]);
+        }
+    }
+}
+
+
+//maximum subarray sum
+int Solution::maxSubArray(const vector<int> &A) {
+    int msf=INT_MIN, meh=0;
+    for(int i=0;i<A.size();i++){
+        meh=meh+A[i];
+        if(msf<meh) msf=meh;
+        if(meh<0) meh=0;
+    }
+    return msf;
+}
+
+
+//largest number 
+bool comp(string a,string b){
+    return a+b>b+a;
+}
+
+string Solution::largestNumber(const vector<int> &A) {
+    string ans="";
+    vector<string> s;
+    for(auto i:A){
+        s.push_back(to_string(i));
+    }
+    sort(s.begin(),s.end(),comp);
+    for(auto i:s){
+        ans+=i;
+    }
+    int pos=0;
+    while(ans[pos]=='0' && (pos+1)<ans.length()) pos++;
+    return ans.substr(pos);
+}
+ //missing number - intrview bit
+ int Solution::firstMissingPositive(vector<int> &A) {
+    for(int i=0;i<A.size();i++){
+        if(A[i]>0 && A[i]<=A.size()){
+            if(A[A[i]-1]!=A[i]) {
+                swap(A[A[i]-1],A[i]);
+                i--;
+            }
+        }
+        else{
+            continue;
+        }
+    }
+    for(int i=0;i<A.size();i++){
+        if(A[i]!=(i+1)){
+            return i+1;
+        }
+    }
+    return A.size()+1;
+}

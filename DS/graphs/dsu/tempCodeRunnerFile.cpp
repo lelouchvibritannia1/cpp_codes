@@ -1,0 +1,1 @@
+cout<<g.contains_cycle()<<endl;
