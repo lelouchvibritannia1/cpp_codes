@@ -2,6 +2,9 @@
 using namespace std;
 
 int main(){
-    cout<<"Badhai Ho!";
-    cout<<true;
+	#ifndef ONLINE_JUDGE
+	freopen("input.txt","r",stdin);
+	freopen("output.txt","W",stdout);
+	#endif
+	cout<<"1"<<endl;
 }
